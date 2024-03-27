@@ -1,0 +1,68 @@
+{
+    "name": "collapsed-view-bug",
+    "displayName": "collapsed_view_bug",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.87.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [ ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [ {
+                "command": "collapsed-view-bug.helloWorld",
+                "title": "Hello World"
+            } ],
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "test_view_container",
+                    "title": "TEST_VIEW_CONTAINER",
+                    "icon": "$(zap)"
+                }
+            ]
+        },
+        "views": {
+            "test_view_container": [
+                {
+                    "type": "webview",
+                    "visibility": "collapsed",
+                    "id": "test_view_0",
+                    "name": "TEST_VIEW_0",
+                    "initialSize": 0
+                },
+                {
+                    "type": "webview",
+                    "visibility": "visible",
+                    "id": "test_view_1",
+                    "name": "TEST_VIEW_1"
+                },
+                {
+                    "type": "webview",
+                    "visibility": "hidden",
+                    "id": "test_view_2",
+                    "name": "TEST_VIEW_2"
+                }
+
+            ]
+        }
+    },
+
+    "scripts": {
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "test": "vscode-test"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.87.0",
+        "@types/mocha": "^10.0.6",
+        "@types/node": "18.x",
+        "eslint": "^8.56.0",
+        "typescript": "^5.3.3",
+        "@vscode/test-cli": "^0.0.6",
+        "@vscode/test-electron": "^2.3.9"
+    }
+}
